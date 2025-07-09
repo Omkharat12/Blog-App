@@ -1,0 +1,77 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node modules
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Build output
+dist/
+dist-ssr/
+build/
+frontend/build/
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# Frontend .env files
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+*.sw?
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.bak
+
+# IDEs/editors
+.vscode/
+!.vscode/extensions.json
+.idea/
+
+# Coverage
+coverage/
+
+# Logs (backend/frontend)
+frontend/npm-debug.log*
+backend/npm-debug.log*
