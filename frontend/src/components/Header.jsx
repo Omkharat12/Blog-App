@@ -40,9 +40,9 @@ export default function Header() {
         <nav className='flex items-center justify-between p-4 border-b bg-white dark:bg-gray-900 border-b-purple-600 to-pink-500'>
             <Link to='/' className='text-xl font-bold text-gray-900 dark:text-white'>
                 <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-lg text-white'>
-                    Sahand's
+                    BlogNest
                 </span>{' '}
-                Blog
+
             </Link>
 
 
