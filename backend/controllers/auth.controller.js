@@ -45,11 +45,6 @@ export const signin = async (req, res, next) => {
   }
 
   try {
-    const validUser = await User.findOne({ email });
-    if (!validUser) {
-      return next(errorHandler(404, "User not found"));
-    }
-
     let user = await User.findOne({ email });
     if (!user) {
       return res.status(401).json({
@@ -81,11 +76,16 @@ export const signin = async (req, res, next) => {
         httpOnly: true,
       };
 
-      res.cookie("access_token", token, options).status(200).json({
+      return res.cookie("access_token", token, options).status(200).json({
         success: true,
         token,
         user,
         message: "User logged in successfully",
+      });
+    } else {
+      return res.status(401).json({
+        success: false,
+        message: "Invalid email or password",
       });
     }
   } catch (error) {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,10 +12,23 @@ export default function Header() {
     const { theme } = useSelector((state) => state.theme);
     const [searchTerm, setSearchTerm] = useState('')
     const dispatch = useDispatch()
+    const dropdownRef = useRef();
     const location = useLocation()
     // 
     // console.log(currentUser.profilePicture);
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     useEffect(() => { }, [location.search])
     const handleSignout = async () => {
@@ -72,7 +85,7 @@ export default function Header() {
                 </button>
 
                 {currentUser ? (
-                    <div className="relative inline-block text-left">
+                    <div className="relative inline-block text-left" ref={dropdownRef}>
                         <button
                             onClick={() => setOpen(!open)}
                             className="focus:outline-none"
