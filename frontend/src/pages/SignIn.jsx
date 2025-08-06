@@ -54,7 +54,7 @@ export default function SignIn() {
   };
 
   return (
-    <div className='min-h-screen bg-gradient-to-tr from-slate-900 via-gray-800 to-slate-900 flex items-center justify-center px-4 py-12'>
+    <div className='h-full bg-gradient-to-tr from-slate-900 via-gray-800 to-slate-900 flex items-center justify-center px-4 py-12'>
       <div className='w-full max-w-md bg-white dark:bg-gray-900 rounded-3xl shadow-xl p-8 space-y-6'>
         <h1 className='text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500'>
           Sahand's Blog
